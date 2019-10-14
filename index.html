@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles/styles.css" type="text/css">
+    </head>
+
+    <body>
+        <div class = "div-main">
+
+            <!-- OUTPUT -->
+            <div class = "div-main__div-output">
+                <div class = "div-main__div-output__header">
+                    <ul class = "div-main__div-output__header__menu" onclick = "getEventTarget()">
+                        <li class = "div-main__div-output__header__menu__li"><a class = "div-main__div-output__header__menu__li__a--company" href = "#" onclick = "getEventTarget()">Company Name</a></li>
+                        <div class = "div-main__div-output__header__menu__inner-div">
+                            <li class = "div-main__div-output__header__menu__li"><a class = "div-main__div-output__header__menu__li__a" href = "#" onclick = "getEventTarget()">Item 1</a></li>
+                            <li class = "div-main__div-output__header__menu__li"><a class = "div-main__div-output__header__menu__li__a" href = "#" onclick = "getEventTarget()">Item 2</a></li>
+                        </div>
+                    </ul>
+                </div>
+
+                <div class = "div-main__div-output__main">
+                    <h1 class = "div-main__div-output__main__h1" onclick = "getEventTarget()">Test Page</h1>
+                    <p class = "div-main__div-output__main__p" onclick = "getEventTarget()">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis auctor elit eget aliquet. Etiam ut faucibus eros. Cras porta, turpis in suscipit laoreet, nibh enim euismod lorem, non bibendum justo odio ac eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed rhoncus vel leo vel facilisis. Fusce vitae gravida nisi. Suspendisse erat velit, vestibulum ut ipsum vel, dictum ullamcorper erat. Integer posuere nunc nec maximus tempor. Proin tincidunt at ligula ut elementum. Donec rhoncus arcu a nisi condimentum, in suscipit dolor laoreet. Integer non turpis dictum, viverra felis vel, ornare ligula. Sed iaculis enim at sodales tincidunt. Sed neque sem, egestas et justo sed, semper fermentum risus. Aliquam enim metus, luctus sed nulla ut, ullamcorper dictum sapien.</p>
+                    <div class = "div-main__div-output__main__div--input">
+                        <label class = "div-main__div-output__main__label" for = "exampleInput" onclick = "getEventTarget()">Example Label:</label>
+                        <input class = "div-main__div-output__main__input" name = "exampleInput" type = "text" onclick = "getEventTarget()">
+                    </div>
+                    <button type = "button" class = "div-main__div-output__main__button" onclick = "getEventTarget()">Click Me!</button>
+                </div>
+            </div>
+
+            <!-- INPUT -->
+            <div class = "div-main__div-input">
+
+                <p id = "currentlySelectedP">Currently Selected: body</p>
+
+                <div>
+                    <label>Background Color</label>
+                    <input id = "bgColorInput" type = "color" value = "#000000" onchange = "changeBgColorTextField(this)">
+                    <input id = "bgColorTextInput" type = "text"  value = "#000000" oninput = "changeBgColorTextField(this)">
+                </div>
+
+                <div>
+                    <label>Color</label>
+                    <input id = "fgColorInput" type = "color" value = "#000000" onchange = "changeFgColorTextField(this)">
+                    <input id = "fgColorTextInput" type = "text" value = "#000000" oninput = "changeFgColorTextField(this)">
+                </div>
+
+                <button type = "button" onclick = "applyChanges()">Apply Changes</button>
+
+            </div>
+        </div>
+
+        <script src="scripts/main.js"></script>
+    </body>
+</html>

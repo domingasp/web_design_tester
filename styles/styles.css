@@ -1,0 +1,228 @@
+/* ################## CSS RESET ################## */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    line-height: 1;
+    font-size: 100%; /* Sets it to 16px */
+    height: 100%;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ################## CSS RESET ################## */
+
+/* COLORS
+    Black 293241
+    Dark Blue 3D5A80
+    Blue 98C1D9
+    Light Blue E0FBFC
+    Orange EE6C4D
+*/
+
+
+.div-main {
+    width: 100%;
+}
+
+
+/* ################## OUTPUT STYLING ################## */
+.div-main__div-output {
+    display: block;
+    width: 50%;
+    float: left;
+}
+
+.div-main__div-output__header__menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #3D5A80;
+}
+
+.div-main__div-output__header__menu__li {
+    float: left;
+}
+
+.div-main__div-output__header__menu__li__a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1rem 1rem;
+    text-decoration: none;
+
+    font-family: "Arial";
+    font-weight: bold;
+    outline: none;
+}
+
+.div-main__div-output__header__menu__li__a:hover {
+    background-color: #293241;
+}
+
+.div-main__div-output__header__menu__li__a:focus {
+    box-shadow: 0 0 0 0.125rem #E0FBFC;
+    background-color: #293241;
+}
+
+.div-main__div-output__header__menu__li__a--company {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1rem 1rem;
+    text-decoration: none;
+
+    font-family: "Arial";
+    font-weight: bold
+}
+
+.div-main__div-output__header__menu__li__a--company:hover {
+    color: #EE6C4D;
+    background-color: #293241;
+    text-decoration: underline;
+}
+
+.div-main__div-output__header__menu__li__a--company:focus {
+    color: #EE6C4D;
+    background-color: #293241;
+    text-decoration: underline;
+    box-shadow: 0 0 0 0.125rem #E0FBFC;
+}
+
+.div-main__div-output__header__menu__inner-div {
+    float: right;
+}
+
+.div-main__div-output__main {
+    box-sizing: border-box;
+    padding: 2rem;
+
+    text-align: center;
+}
+
+.div-main__div-output__main__h1 {
+    font-family: "Arial";
+    font-size: 2rem;
+    text-align: left;
+    text-decoration: underline;
+}
+
+.div-main__div-output__main__p {
+    font-family: "Arial";
+    text-align: left;
+
+    margin-top: 0.5rem;
+}
+
+.div-main__div-output__main__div--input {
+    width: 40%;
+
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.div-main__div-output__main__label {
+    font-family: "Arial";
+    float: left;
+}
+
+.div-main__div-output__main__label::after {
+    content: "\A";
+    white-space: pre;
+}
+
+.div-main__div-output__main__input {
+    font-family: "Arial";
+    font-size: 1rem;
+
+    margin-top: 0.5rem;
+
+    outline: none;
+    border: none;
+
+    border: solid 0.0625rem #293241;
+    border-radius: 0.0625rem;
+
+    padding: 0.25rem 0.25rem;
+}
+
+.div-main__div-output__main__input:focus {
+    box-shadow: 0 0 0 0.125rem #293241;
+}
+
+.div-main__div-output__main__button {
+    border: none;
+    outline: none;
+
+    margin-top: 0.5rem;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-family: "Arial";
+    font-size: 1.5rem;
+    background-color: #3D5A80;
+    color: white;
+    padding: 0.5rem 2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.div-main__div-output__main__button:hover {
+    background-color: #EE6C4D;
+}
+
+.div-main__div-output__main__button:focus {
+    background-color: #EE6C4D;
+    box-shadow: 0 0 0 0.125rem #293241;
+}
+
+
+/* ################## INPUT STYLING ################## */
+
+.div-main__div-input {
+    display: inline-block;
+    background-color: pink;
+    width: 50%;
+}
