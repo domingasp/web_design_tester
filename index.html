@@ -33,7 +33,7 @@
             <!-- INPUT -->
             <div class = "div-main__div-input">
 
-                <p id = "currentlySelectedP">Currently Selected: body</p>
+                <p id = "currentlySelectedP">Currently Selected: Tag:A Content:Company ...</p>
 
                 <div>
                     <label>Background Color</label>
@@ -46,6 +46,77 @@
                     <input id = "fgColorInput" type = "color" value = "#000000" onchange = "changeFgColorTextField(this)">
                     <input id = "fgColorTextInput" type = "text" value = "#000000" oninput = "changeFgColorTextField(this)">
                 </div>
+
+                <div>
+                    <label>Background Color (Hover)</label>
+                    <input id = "bgHoverColorInput" type = "color" value = "#000000" onchange = "changeBgHoverColorTextField(this)">
+                    <input id = "bgHoverColorTextInput" type = "text"  value = "#000000" oninput = "changeBgHoverColorTextField(this)">
+                </div>
+
+                <div>
+                    <label>Color (Hover)</label>
+                    <input id = "fgHoverColorInput" type = "color" value = "#000000" onchange = "changeFgHoverColorTextField(this)">
+                    <input id = "fgHoverColorTextInput" type = "text" value = "#000000" oninput = "changeFgHoverColorTextField(this)">
+                </div>
+
+                <div>
+                    <label>Background Color (Focus)</label>
+                    <input id = "bgFocusColorInput" type = "color" value = "#000000" onchange = "changeBgFocusColorTextField(this)">
+                    <input id = "bgFocusColorTextInput" type = "text"  value = "#000000" oninput = "changeBgFocusColorTextField(this)">
+                </div>
+
+                <div>
+                    <label>Color (Focus)</label>
+                    <input id = "fgFocusColorInput" type = "color" value = "#000000" onchange = "changeFgFocusColorTextField(this)">
+                    <input id = "fgFocusColorTextInput" type = "text" value = "#000000" oninput = "changeFgFocusColorTextField(this)">
+                </div>
+
+                <div>
+                    <label>Text Decoration</label>
+                    <select id = "textDecor">
+                        <option value = "none">None</option>
+                        <option value = "underline">Underline</option>
+                        <option value = "line-through">Line Through</option>
+                        <option value = "overline">Overline</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Text Decoration (Hover)</label>
+                    <select id = "textDecorHover">
+                        <option value = "none">None</option>
+                        <option value = "underline">Underline</option>
+                        <option value = "line-through">Line Through</option>
+                        <option value = "overline">Overline</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Text Decoration (Focus)</label>
+                    <select id = "textDecorFocus">
+                        <option value = "none">None</option>
+                        <option value = "underline">Underline</option>
+                        <option value = "line-through">Line Through</option>
+                        <option value = "overline">Overline</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Focus Outline</label>
+                    <input id = "focusOutlineColorInput" type = "color" value = "#000000" onchange = "changeFocusOutlineColorTextField(this)">
+                    <input id = "focusOutlineColorTextInput" type = "text"  value = "#000000" oninput = "changeFocusOutlineColorTextField(this)">
+                </div>
+
+                <div>
+                    <label>Focus Width in rem (1 rem = 16 px)</label>
+                    <input id = "focusOutlineWidthInput" type = "number"  value = "1">
+                </div>
+
+                <div>
+                    <label>Focus Blur in rem (1 rem = 16 px)</label>
+                    <input id = "focusOutlineBlurInput" type = "number"  value = "0">
+                </div>
+
 
                 <button type = "button" onclick = "applyChanges()">Apply Changes</button>
 
