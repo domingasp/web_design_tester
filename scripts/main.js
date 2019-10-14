@@ -25,11 +25,15 @@ function applyChanges() {
     focusOutlineWidth = document.getElementById("focusOutlineWidthInput").value + "rem";
     focusOutlineBlur = document.getElementById("focusOutlineBlurInput").value + "rem";
 
+    newFontFamily = document.getElementById("fontFamilySelect").value;
+
     selectedElement.style.backgroundColor = bgColor;
     selectedElement.style.color = fgColor;
     selectedElement.style.textDecoration = textDecor;
 
-    if (selectedElement.tagName == "BUTTON" || selectedElement.tagName == "A" ) {
+    selectedElement.style.fontFamily = newFontFamily;
+
+    if (selectedElement.tagName == "BUTTON" || selectedElement.tagName == "A" || selectedElement.tagName == "INPUT") {
         elementToApplyFunctionsTo = selectedElement;
 
         elementToApplyFunctionsTo.addEventListener("mouseover", function() {

@@ -26,7 +26,7 @@
                         <label class = "div-main__div-output__main__label" for = "exampleInput" onclick = "getEventTarget()">Example Label:</label>
                         <input class = "div-main__div-output__main__input" name = "exampleInput" type = "text" onclick = "getEventTarget()">
                     </div>
-                    <button type = "button" class = "div-main__div-output__main__button" onclick = "getEventTarget()">Click Me!</button>
+                    <button type = "button" class = "div-main__div-output__main__button" onclick = "getEventTarget()">Test Button</button>
                 </div>
             </div>
 
@@ -43,8 +43,8 @@
 
                 <div>
                     <label>Color</label>
-                    <input id = "fgColorInput" type = "color" value = "#000000" onchange = "changeFgColorTextField(this)">
-                    <input id = "fgColorTextInput" type = "text" value = "#000000" oninput = "changeFgColorTextField(this)">
+                    <input id = "fgColorInput" type = "color" value = "#ffffff" onchange = "changeFgColorTextField(this)">
+                    <input id = "fgColorTextInput" type = "text" value = "#ffffff" oninput = "changeFgColorTextField(this)">
                 </div>
 
                 <div>
@@ -55,8 +55,8 @@
 
                 <div>
                     <label>Color (Hover)</label>
-                    <input id = "fgHoverColorInput" type = "color" value = "#000000" onchange = "changeFgHoverColorTextField(this)">
-                    <input id = "fgHoverColorTextInput" type = "text" value = "#000000" oninput = "changeFgHoverColorTextField(this)">
+                    <input id = "fgHoverColorInput" type = "color" value = "#ffffff" onchange = "changeFgHoverColorTextField(this)">
+                    <input id = "fgHoverColorTextInput" type = "text" value = "#ffffff" oninput = "changeFgHoverColorTextField(this)">
                 </div>
 
                 <div>
@@ -67,8 +67,8 @@
 
                 <div>
                     <label>Color (Focus)</label>
-                    <input id = "fgFocusColorInput" type = "color" value = "#000000" onchange = "changeFgFocusColorTextField(this)">
-                    <input id = "fgFocusColorTextInput" type = "text" value = "#000000" oninput = "changeFgFocusColorTextField(this)">
+                    <input id = "fgFocusColorInput" type = "color" value = "#ffffff" onchange = "changeFgFocusColorTextField(this)">
+                    <input id = "fgFocusColorTextInput" type = "text" value = "#ffffff" oninput = "changeFgFocusColorTextField(this)">
                 </div>
 
                 <div>
@@ -115,6 +115,36 @@
                 <div>
                     <label>Focus Blur in rem (1 rem = 16 px)</label>
                     <input id = "focusOutlineBlurInput" type = "number"  value = "0">
+                </div>
+
+                <div>
+                    <label>Font Family</label>
+                    <select id = "fontFamilySelect">
+                        <optgroup label = "Sans Serif Fonts">
+                            <option value = "Arial" style = "font-family: Arial;">Arial</option>
+                            <option value = "Arial Black" style = "font-family: Arial Black;">Arial Black</option>
+                            <option value = "Arial Narrow" style = "font-family: Arial Narrow;">Arial Narrow</option>
+                            <option value = "Calibri" style = "font-family: Calibri;">Calibri</option>
+                            <option value = "Century Gothic" style = "font-family: Century Gothic;">Century Gothic</option>
+                            <option value = "Franklin Gothic Medium" style = "font-family: Franklin Gothic Medium;">Franklin Gothic Medium</option>
+                            <option value = "Helvetica" style = "font-family: Helvetica;">Helvetica</option>
+                            <option value = "Impact" style = "font-family: Impact;">Impact</option>
+                            <option value = "Tahoma" style = "font-family: Tahoma;">Tahoma</option>
+                            <option value = "Trebuchet MS" style = "font-family: Trebuchet MS;">Trebuchet MS</option>
+                            <option value = "Verdana" style = "font-family: Verdana;">Verdana</option>
+                        </optgroup>
+                        <optgroup label = "Serif Fonts">
+                            <option value = "Book Antiqua" style = "font-family: Book Antiqua;">Book Antiqua</option>
+                            <option value = "Garamond" style = "font-family: Garamond;">Garamond</option>
+                            <option value = "Georgia" style = "font-family: Georgia;">Georgia</option>
+                            <option value = "Lucida Bright" style = "font-family: Lucida Bright;">Lucida Bright</option>
+                            <option value = "Times New Roman" style = "font-family: Times New Roman;">Times New Roman</option>
+                        </optgroup>
+                        <optgroup label = "Monospaced Fonts">
+                            <option value = "Courier New" style = "font-family: Courier New;">Courier New</option>
+                            <option value = "Lucida Sans Typewriter" style = "font-family: Lucida Sans Typewriter;">Lucida Sans Typewriter</option>
+                        </optgroup>
+                    </select>
                 </div>
 
 
