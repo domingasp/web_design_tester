@@ -31,17 +31,20 @@
                 </div>
             </div>
 
+            <div class = "div-main__div-separator">
+            </div>
+
             <!-- INPUT -->
             <div class = "div-main__div-input">
 
                 <h1 class = "div-main__div-input__h1">Edit parameters:</h1>
 
-                <p id = "currentlySelectedP" class = "div-main__div-input__p">Currently Selected: companyAID</p>
+                <p id = "currentlySelectedP" class = "div-main__div-input__p"><span class = "div-main__div-input__p__span">Currently Selected:</span> "Company Name"</p>
 
-                <div id = "mainBgColorDiv">
-                    <label>Main Background Color</label>
-                    <input id = "bodyBgColorInput" type = "color" value = "#ffffff" onchange = "">
-                    <input id = "bodyBgColorTextInput" type = "text"  value = "#ffffff" oninput = "">
+                <div id = "mainBgColorDiv" class = "div-main__div-input__div-section">
+                    <label class = "div-main__div-input__div-section__label">Body Background Color:</label>
+                    <input class = "div-main__div-input__div-section__input--color" id = "bodyBgColorInput" type = "color" value = "#ffffff" onchange = "">
+                    <input class = "div-main__div-input__div-section__input--text" id = "bodyBgColorTextInput" type = "text"  value = "#ffffff" oninput = "">
                 </div>
 
                 <button type = "button" onclick = "">Apply Changes</button>
