@@ -4,64 +4,52 @@ function getEventTarget(e) {
     e = e || window.event;
 
     selectedElement = e.target || e.srcElement;
-    document.getElementById("currentlySelectedP").innerHTML = "Currently Selected: " +  "Tag:" + selectedElement.tagName + " Content:" + selectedElement.innerText.substring(0, 8) + "...";
+    document.getElementById("currentlySelectedP").innerHTML = "Currently Selected: " + selectedElement.id;
+    document.getElementById("currentTextInput").value = selectedElement.innerText;
 }
 
-function applyChanges() {
-    bgColor = document.getElementById("bgColorInput").value;
-    fgColor = document.getElementById("fgColorInput").value;
+function applyChanges(elem, bgColor, fgColor, bgHoverColor, fgHoverColor, bgFocusColor, fgFocusColor, textDecor, textDecorHover, textDecorFocus, focusOutlineColor, focusOutlineWidth, focusOutlineBlur, newFontFamily, newText) {
+    elem.style.backgroundColor = bgColor;
+    elem.style.color = fgColor;
+    elem.style.textDecoration = textDecor;
 
-    bgHoverColor = document.getElementById("bgHoverColorInput").value;
-    fgHoverColor = document.getElementById("fgHoverColorInput").value;
+    elem.style.fontFamily = newFontFamily;
 
-    bgFocusColor = document.getElementById("bgFocusColorInput").value;
-    fgFocusColor = document.getElementById("fgFocusColorInput").value;
+    if (elem.tagName != "INPUT" && elem.tagName != "UL") {
+        if (newText.length > 0) {
+            elem.innerHTML = newText;
+        }
+    }
 
-    textDecor = document.getElementById("textDecor").value;
-    textDecorHover = document.getElementById("textDecorHover").value;
-    textDecorFocus = document.getElementById("textDecorFocus").value;
+    if (elem.tagName == "BUTTON" || elem.tagName == "A" || elem.tagName == "INPUT") {
 
-    focusOutlineColor = document.getElementById("focusOutlineColorInput").value;
-    focusOutlineWidth = document.getElementById("focusOutlineWidthInput").value + "rem";
-    focusOutlineBlur = document.getElementById("focusOutlineBlurInput").value + "rem";
+        document.getElementById(document.getElementById("currentlySelectedP").innerHTML.substring(20)).addEventListener("mouseover", function() {
 
-    newFontFamily = document.getElementById("fontFamilySelect").value;
-
-    selectedElement.style.backgroundColor = bgColor;
-    selectedElement.style.color = fgColor;
-    selectedElement.style.textDecoration = textDecor;
-
-    selectedElement.style.fontFamily = newFontFamily;
-
-    if (selectedElement.tagName == "BUTTON" || selectedElement.tagName == "A" || selectedElement.tagName == "INPUT") {
-        elementToApplyFunctionsTo = selectedElement;
-
-        elementToApplyFunctionsTo.addEventListener("mouseover", function() {
-            if (this != document.activeElement) {
+            if (this !== document.activeElement) {
                 this.style.backgroundColor = bgHoverColor;
                 this.style.color = fgHoverColor;
                 this.style.textDecoration = textDecorHover;
             }
         });
 
-        elementToApplyFunctionsTo.addEventListener("mouseout", function() {
-            if (this != document.activeElement) {
+        document.getElementById(document.getElementById("currentlySelectedP").innerHTML.substring(20)).addEventListener("mouseout", function() {
+            if (this !== document.activeElement) {
                 this.style.backgroundColor = bgColor;
                 this.style.color = fgColor;
                 this.style.textDecoration = textDecor;
             }
         });
 
-        elementToApplyFunctionsTo.addEventListener("focus", function() {
+        document.getElementById(document.getElementById("currentlySelectedP").innerHTML.substring(20)).addEventListener("focus", function() {
             this.style.backgroundColor = bgFocusColor;
             this.style.color = fgFocusColor;
             this.style.textDecoration = textDecorFocus;
 
-            this.style["boxShadow"] = "0 0 " + focusOutlineBlur + " " + focusOutlineWidth + " " + focusOutlineColor;
+            this.style["boxShadow"] = "0 0 " + focusOutlineBlur + "rem " + focusOutlineWidth + "rem " + focusOutlineColor;
             this.style["outline"] = "none";
         });
 
-        elementToApplyFunctionsTo.addEventListener("blur", function() {
+        document.getElementById(document.getElementById("currentlySelectedP").innerHTML.substring(20)).addEventListener("blur", function() {
             this.style.backgroundColor = bgColor;
             this.style.color = fgColor;
             this.style.textDecoration = textDecor;

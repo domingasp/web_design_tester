@@ -10,30 +10,30 @@
             <!-- OUTPUT -->
             <div class = "div-main__div-output">
                 <div class = "div-main__div-output__header">
-                    <ul class = "div-main__div-output__header__menu" onclick = "getEventTarget()">
-                        <li class = "div-main__div-output__header__menu__li"><a class = "div-main__div-output__header__menu__li__a--company" href = "#" onclick = "getEventTarget()">Company Name</a></li>
+                    <ul id = "ulID" class = "div-main__div-output__header__menu" onclick = "getEventTarget()">
+                        <li class = "div-main__div-output__header__menu__li"><a id = "companyAID" class = "div-main__div-output__header__menu__li__a--company" href = "#" onclick = "getEventTarget()">Company Name</a></li>
                         <div class = "div-main__div-output__header__menu__inner-div">
-                            <li class = "div-main__div-output__header__menu__li"><a class = "div-main__div-output__header__menu__li__a" href = "#" onclick = "getEventTarget()">Item 1</a></li>
-                            <li class = "div-main__div-output__header__menu__li"><a class = "div-main__div-output__header__menu__li__a" href = "#" onclick = "getEventTarget()">Item 2</a></li>
+                            <li class = "div-main__div-output__header__menu__li"><a id = "item1AID" class = "div-main__div-output__header__menu__li__a" href = "#" onclick = "getEventTarget()">Item 1</a></li>
+                            <li class = "div-main__div-output__header__menu__li"><a id = "item2AID" class = "div-main__div-output__header__menu__li__a" href = "#" onclick = "getEventTarget()">Item 2</a></li>
                         </div>
                     </ul>
                 </div>
 
                 <div class = "div-main__div-output__main">
-                    <h1 class = "div-main__div-output__main__h1" onclick = "getEventTarget()">Test Page</h1>
-                    <p class = "div-main__div-output__main__p" onclick = "getEventTarget()">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis auctor elit eget aliquet. Etiam ut faucibus eros. Cras porta, turpis in suscipit laoreet, nibh enim euismod lorem, non bibendum justo odio ac eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed rhoncus vel leo vel facilisis. Fusce vitae gravida nisi. Suspendisse erat velit, vestibulum ut ipsum vel, dictum ullamcorper erat. Integer posuere nunc nec maximus tempor. Proin tincidunt at ligula ut elementum. Donec rhoncus arcu a nisi condimentum, in suscipit dolor laoreet. Integer non turpis dictum, viverra felis vel, ornare ligula. Sed iaculis enim at sodales tincidunt. Sed neque sem, egestas et justo sed, semper fermentum risus. Aliquam enim metus, luctus sed nulla ut, ullamcorper dictum sapien.</p>
+                    <h1 id = "headerH1ID" class = "div-main__div-output__main__h1" onclick = "getEventTarget()">Test Page</h1>
+                    <p id = "textPID" class = "div-main__div-output__main__p" onclick = "getEventTarget()">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis auctor elit eget aliquet. Etiam ut faucibus eros. Cras porta, turpis in suscipit laoreet, nibh enim euismod lorem, non bibendum justo odio ac eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed rhoncus vel leo vel facilisis. Fusce vitae gravida nisi. Suspendisse erat velit, vestibulum ut ipsum vel, dictum ullamcorper erat. Integer posuere nunc nec maximus tempor. Proin tincidunt at ligula ut elementum. Donec rhoncus arcu a nisi condimentum, in suscipit dolor laoreet. Integer non turpis dictum, viverra felis vel, ornare ligula. Sed iaculis enim at sodales tincidunt. Sed neque sem, egestas et justo sed, semper fermentum risus. Aliquam enim metus, luctus sed nulla ut, ullamcorper dictum sapien.</p>
                     <div class = "div-main__div-output__main__div--input">
-                        <label class = "div-main__div-output__main__label" for = "exampleInput" onclick = "getEventTarget()">Example Label:</label>
-                        <input class = "div-main__div-output__main__input" name = "exampleInput" type = "text" onclick = "getEventTarget()">
+                        <label id = "labelID" class = "div-main__div-output__main__label" for = "exampleInput" onclick = "getEventTarget()">Example Label:</label>
+                        <input id = "inputID" class = "div-main__div-output__main__input" name = "exampleInput" type = "text" onclick = "getEventTarget()">
                     </div>
-                    <button type = "button" class = "div-main__div-output__main__button" onclick = "getEventTarget()">Test Button</button>
+                    <button id = "buttonID" type = "button" class = "div-main__div-output__main__button" onclick = "getEventTarget()">Test Button</button>
                 </div>
             </div>
 
             <!-- INPUT -->
             <div class = "div-main__div-input">
 
-                <p id = "currentlySelectedP">Currently Selected: Tag:A Content:Company ...</p>
+                <p id = "currentlySelectedP">Currently Selected: companyAID</p>
 
                 <div>
                     <label>Background Color</label>
@@ -109,12 +109,12 @@
 
                 <div>
                     <label>Focus Width in rem (1 rem = 16 px)</label>
-                    <input id = "focusOutlineWidthInput" type = "number"  value = "1">
+                    <input id = "focusOutlineWidthInput" type = "number"  value = "0.125" step = "0.1">
                 </div>
 
                 <div>
                     <label>Focus Blur in rem (1 rem = 16 px)</label>
-                    <input id = "focusOutlineBlurInput" type = "number"  value = "0">
+                    <input id = "focusOutlineBlurInput" type = "number"  value = "0.5" step = "0.1">
                 </div>
 
                 <div>
@@ -147,8 +147,28 @@
                     </select>
                 </div>
 
+                <div>
+                    <label>Current Text</label>
+                    <input id = "currentTextInput" type = "text"  value = "Company Name">
+                </div>
 
-                <button type = "button" onclick = "applyChanges()">Apply Changes</button>
+
+                <button type = "button" onclick = "
+                applyChanges(document.getElementById(document.getElementById('currentlySelectedP').innerHTML.substring(20)),
+                document.getElementById('bgColorInput').value,
+                document.getElementById('fgColorInput').value,
+                document.getElementById('bgHoverColorInput').value,
+                document.getElementById('fgHoverColorInput').value,
+                document.getElementById('bgFocusColorInput').value,
+                document.getElementById('fgFocusColorInput').value,
+                document.getElementById('textDecor').value,
+                document.getElementById('textDecorHover').value,
+                document.getElementById('textDecorFocus').value,
+                document.getElementById('focusOutlineColorInput').value,
+                document.getElementById('focusOutlineWidthInput').value,
+                document.getElementById('focusOutlineBlurInput').value,
+                document.getElementById('fontFamilySelect').value,
+                document.getElementById('currentTextInput').value)">Apply Changes</button>
 
             </div>
         </div>
