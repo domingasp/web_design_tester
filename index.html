@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="styles/styles.css" type="text/css">
     </head>
 
@@ -33,142 +34,17 @@
             <!-- INPUT -->
             <div class = "div-main__div-input">
 
-                <p id = "currentlySelectedP">Currently Selected: companyAID</p>
+                <h1 class = "div-main__div-input__h1">Edit parameters:</h1>
 
-                <div>
-                    <label>Background Color</label>
-                    <input id = "bgColorInput" type = "color" value = "#000000" onchange = "changeBgColorTextField(this)">
-                    <input id = "bgColorTextInput" type = "text"  value = "#000000" oninput = "changeBgColorTextField(this)">
+                <p id = "currentlySelectedP" class = "div-main__div-input__p">Currently Selected: companyAID</p>
+
+                <div id = "mainBgColorDiv">
+                    <label>Main Background Color</label>
+                    <input id = "bodyBgColorInput" type = "color" value = "#ffffff" onchange = "">
+                    <input id = "bodyBgColorTextInput" type = "text"  value = "#ffffff" oninput = "">
                 </div>
 
-                <div>
-                    <label>Color</label>
-                    <input id = "fgColorInput" type = "color" value = "#ffffff" onchange = "changeFgColorTextField(this)">
-                    <input id = "fgColorTextInput" type = "text" value = "#ffffff" oninput = "changeFgColorTextField(this)">
-                </div>
-
-                <div>
-                    <label>Background Color (Hover)</label>
-                    <input id = "bgHoverColorInput" type = "color" value = "#000000" onchange = "changeBgHoverColorTextField(this)">
-                    <input id = "bgHoverColorTextInput" type = "text"  value = "#000000" oninput = "changeBgHoverColorTextField(this)">
-                </div>
-
-                <div>
-                    <label>Color (Hover)</label>
-                    <input id = "fgHoverColorInput" type = "color" value = "#ffffff" onchange = "changeFgHoverColorTextField(this)">
-                    <input id = "fgHoverColorTextInput" type = "text" value = "#ffffff" oninput = "changeFgHoverColorTextField(this)">
-                </div>
-
-                <div>
-                    <label>Background Color (Focus)</label>
-                    <input id = "bgFocusColorInput" type = "color" value = "#000000" onchange = "changeBgFocusColorTextField(this)">
-                    <input id = "bgFocusColorTextInput" type = "text"  value = "#000000" oninput = "changeBgFocusColorTextField(this)">
-                </div>
-
-                <div>
-                    <label>Color (Focus)</label>
-                    <input id = "fgFocusColorInput" type = "color" value = "#ffffff" onchange = "changeFgFocusColorTextField(this)">
-                    <input id = "fgFocusColorTextInput" type = "text" value = "#ffffff" oninput = "changeFgFocusColorTextField(this)">
-                </div>
-
-                <div>
-                    <label>Text Decoration</label>
-                    <select id = "textDecor">
-                        <option value = "none">None</option>
-                        <option value = "underline">Underline</option>
-                        <option value = "line-through">Line Through</option>
-                        <option value = "overline">Overline</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label>Text Decoration (Hover)</label>
-                    <select id = "textDecorHover">
-                        <option value = "none">None</option>
-                        <option value = "underline">Underline</option>
-                        <option value = "line-through">Line Through</option>
-                        <option value = "overline">Overline</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label>Text Decoration (Focus)</label>
-                    <select id = "textDecorFocus">
-                        <option value = "none">None</option>
-                        <option value = "underline">Underline</option>
-                        <option value = "line-through">Line Through</option>
-                        <option value = "overline">Overline</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label>Focus Outline</label>
-                    <input id = "focusOutlineColorInput" type = "color" value = "#000000" onchange = "changeFocusOutlineColorTextField(this)">
-                    <input id = "focusOutlineColorTextInput" type = "text"  value = "#000000" oninput = "changeFocusOutlineColorTextField(this)">
-                </div>
-
-                <div>
-                    <label>Focus Width in rem (1 rem = 16 px)</label>
-                    <input id = "focusOutlineWidthInput" type = "number"  value = "0.125" step = "0.1">
-                </div>
-
-                <div>
-                    <label>Focus Blur in rem (1 rem = 16 px)</label>
-                    <input id = "focusOutlineBlurInput" type = "number"  value = "0.5" step = "0.1">
-                </div>
-
-                <div>
-                    <label>Font Family</label>
-                    <select id = "fontFamilySelect">
-                        <optgroup label = "Sans Serif Fonts">
-                            <option value = "Arial" style = "font-family: Arial;">Arial</option>
-                            <option value = "Arial Black" style = "font-family: Arial Black;">Arial Black</option>
-                            <option value = "Arial Narrow" style = "font-family: Arial Narrow;">Arial Narrow</option>
-                            <option value = "Calibri" style = "font-family: Calibri;">Calibri</option>
-                            <option value = "Century Gothic" style = "font-family: Century Gothic;">Century Gothic</option>
-                            <option value = "Franklin Gothic Medium" style = "font-family: Franklin Gothic Medium;">Franklin Gothic Medium</option>
-                            <option value = "Helvetica" style = "font-family: Helvetica;">Helvetica</option>
-                            <option value = "Impact" style = "font-family: Impact;">Impact</option>
-                            <option value = "Tahoma" style = "font-family: Tahoma;">Tahoma</option>
-                            <option value = "Trebuchet MS" style = "font-family: Trebuchet MS;">Trebuchet MS</option>
-                            <option value = "Verdana" style = "font-family: Verdana;">Verdana</option>
-                        </optgroup>
-                        <optgroup label = "Serif Fonts">
-                            <option value = "Book Antiqua" style = "font-family: Book Antiqua;">Book Antiqua</option>
-                            <option value = "Garamond" style = "font-family: Garamond;">Garamond</option>
-                            <option value = "Georgia" style = "font-family: Georgia;">Georgia</option>
-                            <option value = "Lucida Bright" style = "font-family: Lucida Bright;">Lucida Bright</option>
-                            <option value = "Times New Roman" style = "font-family: Times New Roman;">Times New Roman</option>
-                        </optgroup>
-                        <optgroup label = "Monospaced Fonts">
-                            <option value = "Courier New" style = "font-family: Courier New;">Courier New</option>
-                            <option value = "Lucida Sans Typewriter" style = "font-family: Lucida Sans Typewriter;">Lucida Sans Typewriter</option>
-                        </optgroup>
-                    </select>
-                </div>
-
-                <div>
-                    <label>Current Text</label>
-                    <input id = "currentTextInput" type = "text"  value = "Company Name">
-                </div>
-
-
-                <button type = "button" onclick = "
-                applyChanges(document.getElementById(document.getElementById('currentlySelectedP').innerHTML.substring(20)),
-                document.getElementById('bgColorInput').value,
-                document.getElementById('fgColorInput').value,
-                document.getElementById('bgHoverColorInput').value,
-                document.getElementById('fgHoverColorInput').value,
-                document.getElementById('bgFocusColorInput').value,
-                document.getElementById('fgFocusColorInput').value,
-                document.getElementById('textDecor').value,
-                document.getElementById('textDecorHover').value,
-                document.getElementById('textDecorFocus').value,
-                document.getElementById('focusOutlineColorInput').value,
-                document.getElementById('focusOutlineWidthInput').value,
-                document.getElementById('focusOutlineBlurInput').value,
-                document.getElementById('fontFamilySelect').value,
-                document.getElementById('currentTextInput').value)">Apply Changes</button>
+                <button type = "button" onclick = "">Apply Changes</button>
 
             </div>
         </div>

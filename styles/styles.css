@@ -59,6 +59,9 @@ table {
 
 .div-main {
     width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
 }
 
 
@@ -67,6 +70,7 @@ table {
     display: block;
     width: 50%;
     float: left;
+    height: 100%;
 }
 
 .div-main__div-output__header__menu {
@@ -75,10 +79,14 @@ table {
     padding: 0;
     overflow: hidden;
     background-color: #3D5A80;
+
+    height: 100%;
 }
 
 .div-main__div-output__header__menu__li {
     float: left;
+
+    height: 100%;
 }
 
 .div-main__div-output__header__menu__li__a {
@@ -91,6 +99,8 @@ table {
     font-family: "Arial";
     font-weight: bold;
     outline: none;
+
+    height: 100%;
 }
 
 .div-main__div-output__header__menu__li__a:hover {
@@ -163,7 +173,6 @@ table {
 
 .div-main__div-output__main__label {
     font-family: "Arial";
-    float: left;
 }
 
 .div-main__div-output__main__label::after {
@@ -224,5 +233,24 @@ table {
 .div-main__div-input {
     display: inline-block;
     background-color: pink;
+    box-sizing: border-box;
+    padding: 1rem 3rem;
     width: 50%;
+
+    height: 100%;
+
+    font-family: "Arial";
+}
+
+.div-main__div-input__h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.div-main__div-input__p {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 3rem;
 }
