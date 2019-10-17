@@ -31,23 +31,47 @@
                 </div>
             </div>
 
-            <div class = "div-main__div-separator">
-            </div>
-
             <!-- INPUT -->
             <div class = "div-main__div-input">
 
-                <h1 class = "div-main__div-input__h1">Edit parameters:</h1>
-
                 <p id = "currentlySelectedP" class = "div-main__div-input__p"><span class = "div-main__div-input__p__span">Currently Selected:</span> "Company Name"</p>
 
-                <div id = "mainBgColorDiv" class = "div-main__div-input__div-section">
-                    <label class = "div-main__div-input__div-section__label">Body Background Color:</label>
-                    <input class = "div-main__div-input__div-section__input--color" id = "bodyBgColorInput" type = "color" value = "#ffffff" onchange = "">
-                    <input class = "div-main__div-input__div-section__input--text" id = "bodyBgColorTextInput" type = "text"  value = "#ffffff" oninput = "">
+                <h1 class = "div-main__div-input__h1">Edit parameters:</h1>
+
+                <div class = "div-main__div-input__div--inner">
+
+                    <div id = "mainBgColorDiv" class = "div-main__div-input__div-section">
+                        <label class = "div-main__div-input__div-section__label">Page Background Color:</label>
+                        <input class = "div-main__div-input__div-section__input--color" id = "bodyBgColorInput" type = "color" value = "#ffffff" onchange = "matchColorToTextInput(this, document.getElementById('bodyBgColorTextInput'))">
+                        <input class = "div-main__div-input__div-section__input--text" id = "bodyBgColorTextInput" type = "text"  value = "#ffffff" oninput = "matchColorToTextInput(this, document.getElementById('bodyBgColorInput'))">
+                    </div>
+
+                    <h2 class = "div-main__div-input__h2">Normal Appearance:</h2>
+
+                    <div id = "normalBgColorDiv" class = "div-main__div-input__div-section">
+                        <label class = "div-main__div-input__div-section__label">Element Background Color:</label>
+                        <input class = "div-main__div-input__div-section__input--color" id = "normalBgColorInput" type = "color" value = "#ffffff" onchange = "matchColorToTextInput(this, document.getElementById('normalBgColorTextInput'))">
+                        <input class = "div-main__div-input__div-section__input--text" id = "normalBgColorTextInput" type = "text"  value = "#ffffff" oninput = "matchColorToTextInput(this, document.getElementById('normalBgColorInput'))">
+                    </div>
+
+                    <div id = "normalFgColorDiv" class = "div-main__div-input__div-section">
+                        <label class = "div-main__div-input__div-section__label">Element Foreground Color:</label>
+                        <input class = "div-main__div-input__div-section__input--color" id = "normalFgColorInput" type = "color" value = "#000000" onchange = "matchColorToTextInput(this, document.getElementById('normalFgColorTextInput'))">
+                        <input class = "div-main__div-input__div-section__input--text" id = "normalFgColorTextInput" type = "text"  value = "#000000" oninput = "matchColorToTextInput(this, document.getElementById('normalFgColorInput'))">
+                    </div>
+
+                    <div id = "normalTextDecorDiv" class = "div-main__div-input__div-section">
+                        <label class = "div-main__div-input__div-section__label">Element Text Decoration:</label>
+                        <select class = "div-main__div-input__div-section__select" id = "normalTextDecorSelect">
+                            <option value = "none">None</option>
+                            <option value = "underline">Underline</option>
+                            <option vaue = "line-through">Line-Through</option>
+                            <option value = "overline">Overline</option>
+                        </select>
+                    </div>
                 </div>
 
-                <button type = "button" onclick = "">Apply Changes</button>
+                <button type = "button" onclick = "applyChanges()" class = "div-main__div-input__button">Apply Changes</button>
 
             </div>
         </div>

@@ -234,24 +234,46 @@ table {
 
     box-sizing: border-box;
     padding: 1rem 3rem;
-    border-left: solid 0.25rem #293241;
+    border-left: solid 0.25rem #1f1f1f;
     width: 50%;
 
     height: 100%;
 
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
 .div-main__div-input__h1 {
     font-size: 2rem;
     text-decoration: underline;
 
-    margin-top: 1rem;
+    color: #1f1f1f;
+
+    margin-top: 2rem;
+    font-family: "Roboto", Arial, Helvetica, sans-serif
+}
+
+.div-main__div-input__h2 {
+    font-size: 1.65rem;
+    text-decoration: underline;
+
+    color: #1f1f1f;
+
+    margin-top: 2rem;
+    font-family: "Roboto", Arial, Helvetica, sans-serif
+}
+
+.div-main__div-input__div--inner {
+    box-sizing: border-box;;
+    padding-left: 1rem;
 }
 
 .div-main__div-input__p {
     font-size: 1.2rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
+
+    color: #1f1f1f;
+    font-family: "Roboto", Arial, Helvetica, sans-serif
+
 }
 
 .div-main__div-input__p__span {
@@ -263,9 +285,14 @@ table {
 }
 
 .div-main__div-input__div-section__label {
+    display: inline-block;
+    width: 15rem;
     font-size: 1.2rem;
     font-weight: bold;
     vertical-align: middle;
+
+    color: #1f1f1f;
+    font-family: "Roboto", Arial, Helvetica, sans-serif
 }
 
 .div-main__div-input__div-section__input--color {
@@ -276,30 +303,101 @@ table {
     border: none;
     outline: none;
 
-    margin-left: 1rem;
-
     -webkit-appearance: none;
 
     background-color: transparent;
+
+    cursor: pointer;
 }
+
 .div-main__div-input__div-section__input--color::-webkit-color-swatch-wrapper {
     padding: 0;
     border: none;
     box-shadow: none;
 }
+
 .div-main__div-input__div-section__input--color::-webkit-color-swatch {
 	border: solid;
 	border-width: 0.125rem;
-	border-color: #293241;
+	border-color: #1f1f1f;
     border-radius: 100%;
+}
+
+.div-main__div-input__div-section__input--color:focus::-webkit-color-swatch {
+	box-shadow: 0 0 0.125rem 0.25rem #98C1D9;
 }
 
 .div-main__div-input__div-section__input--text {
     font-size: 0.9rem;
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     padding-left: 0.125rem;
     padding-right: 0.125rem;
-    width: 5rem;
+    width: 5.5rem;
     vertical-align: middle;
+
+    margin-left: 0.25rem;
+
+    border: none;
+    outline: none;
+
+    color: #1f1f1f;
+    border: 0.125rem solid #1f1f1f;
+    border-radius: 0.0625rem;
+}
+
+.div-main__div-input__div-section__input--text:focus {
+    box-shadow: 0 0 0.125rem 0.25rem #98C1D9;
+}
+
+.div-main__div-input__div-section__select {
+    font-size: 0.9rem;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    padding-left: 0.125rem;
+    padding-right: 0.125rem;
+    width: 7.5rem;
+    vertical-align: middle;
+
+    margin-left: 0.25rem;
+
+    border: none;
+    outline: none;
+
+    color: #1f1f1f;
+    border: 0.125rem solid #1f1f1f;
+    border-radius: 0.0625rem;
+}
+
+.div-main__div-input__div-section__select:focus {
+    box-shadow: 0 0 0.125rem 0.25rem #98C1D9;
+}
+
+.div-main__div-input__button {
+    outline: none;
+    border: none;
+
+    margin-top: 1rem;
+
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1f1f1f;
+    background-color: #F9C22E;
+
+    box-sizing: border-box;
+    padding: 0.5rem 1rem;
+
+    border: 0.125rem solid #1f1f1f;
+    border-radius: 0.125rem;
+    cursor: pointer;
+}
+
+.div-main__div-input__button:hover {
+    background-color: #FE5F55;
+}
+
+.div-main__div-input__button:focus {
+    background-color: #FE5F55;
+    box-shadow: 0 0 0.125rem 0.25rem #98C1D9;
 }

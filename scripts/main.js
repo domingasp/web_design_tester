@@ -8,13 +8,53 @@ function getEventTarget(e) {
 
     lengthLimmit = '<span class = "div-main__div-input__p__span">Currently Selected:</span> "'.length + 20;
     
-    if (document.getElementById("currentlySelectedP").innerHTML.length < lengthLimmit) {
-        document.getElementById("currentlySelectedP").innerHTML = '<span class = "div-main__div-input__p__span">Currently Selected:</span> "' + selectedElement.innerHTML + '"';
+    if (selectedElement.tagName != "UL" && selectedElement.tagName != "INPUT") {
+        if (document.getElementById("currentlySelectedP").innerHTML.length < lengthLimmit) {
+            document.getElementById("currentlySelectedP").innerHTML = '<span class = "div-main__div-input__p__span">Currently Selected:</span> "' + selectedElement.innerHTML + '"';
+        } else {
+            document.getElementById("currentlySelectedP").innerHTML = '<span class = "div-main__div-input__p__span">Currently Selected:</span> "' + selectedElement.innerHTML.substring(0, 20) + '"...';
+        }
     } else {
-        document.getElementById("currentlySelectedP").innerHTML = '<span class = "div-main__div-input__p__span">Currently Selected:</span> "' + selectedElement.innerHTML.substring(0, 20) + '"...';
+        document.getElementById("currentlySelectedP").innerHTML = '<span class = "div-main__div-input__p__span">Currently Selected:</span> "' + selectedElement.tagName + '"';
+    }
+
+    alterParametersDisplayed(selectedElement.tagName);
+}
+
+function alterParametersDisplayed(currentElementTag) {
+    document.getElementById("mainBgColorDiv").style.display = "block";
+    document.getElementById("normalBgColorDiv").style.display = "block";
+    document.getElementById("normalFgColorDiv").style.display = "block";
+    document.getElementById("normalTextDecorDiv").style.display = "block";
+
+    if (currentElementTag == "UL") {
+        document.getElementById("normalFgColorDiv").style.display = "none";
+        document.getElementById("normalTextDecorDiv").style.display = "none";
     }
 }
 
+function matchColorToTextInput(inputChanged, inputToBeChanged) {
+    inputToBeChanged.value = inputChanged.value;
+}
+
 function applyChanges() {
-    
+    bodyColor = document.getElementById("bodyBgColorInput").value;
+
+    normalBgColor = document.getElementById("normalBgColorInput").value;
+    normalFgColor = document.getElementById("normalFgColorInput").value;
+    normalTextDecor = document.getElementById("normalTextDecorSelect").value;
+
+    makeChanges(this.selectedElement, bodyColor, normalBgColor, normalFgColor, normalTextDecor);
+}
+
+function makeChanges(element, bodyColor, normalBgColor, normalFgColor, normalTextDecor) {
+    outputBody = document.getElementsByClassName("div-main__div-output")[0];
+    outputBody.style.backgroundColor = bodyColor;
+
+    element.style.backgroundColor = normalBgColor;
+
+    if (element.tagName != "UL") {
+        element.style.color = normalFgColor;
+        element.style.textDecoration = normalTextDecor;
+    }
 }
