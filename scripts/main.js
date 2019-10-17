@@ -1,5 +1,7 @@
 var selectedElement = document.getElementsByClassName("div-main__div-output__header__menu__li__a--company")[0];
 
+
+
 function getEventTarget(e) {
     e = e || window.event;
 
@@ -34,6 +36,11 @@ function alterParametersDisplayed(currentElement) {
     document.getElementById("hoverFgColorDiv").style.display = "none";
     document.getElementById("hoverTextDecorDiv").style.display = "none";
 
+    document.getElementById("focusH2").style.display = "none";
+    document.getElementById("focusBgColorDiv").style.display = "none";
+    document.getElementById("focusFgColorDiv").style.display = "none";
+    document.getElementById("focusTextDecorDiv").style.display = "none";
+
     if (currentElement.tagName == "UL") {
         document.getElementById("fontFamilyDiv").style.display = "none";
         document.getElementById("currentContentDiv").style.display = "none";
@@ -41,6 +48,11 @@ function alterParametersDisplayed(currentElement) {
         document.getElementById("normalTextDecorDiv").style.display = "none";
     } else if (currentElement.tagName == "INPUT") {
         document.getElementById("currentContentDiv").style.display = "none";
+
+        document.getElementById("focusH2").style.display = "block";
+        document.getElementById("focusBgColorDiv").style.display = "block";
+        document.getElementById("focusFgColorDiv").style.display = "block";
+        document.getElementById("focusTextDecorDiv").style.display = "block";
     } else {
         document.getElementById("contentTextarea").value = currentElement.innerHTML;
 
@@ -49,6 +61,11 @@ function alterParametersDisplayed(currentElement) {
             document.getElementById("hoverBgColorDiv").style.display = "block";
             document.getElementById("hoverFgColorDiv").style.display = "block";
             document.getElementById("hoverTextDecorDiv").style.display = "block";
+
+            document.getElementById("focusH2").style.display = "block";
+            document.getElementById("focusBgColorDiv").style.display = "block";
+            document.getElementById("focusFgColorDiv").style.display = "block";
+            document.getElementById("focusTextDecorDiv").style.display = "block";
         }
     }
 }
@@ -70,10 +87,14 @@ function applyChanges() {
     hoverFgColor = document.getElementById("hoverFgColorInput").value;
     hoverTextDecor = document.getElementById("hoverTextDecorSelect").value;
 
-    makeChanges(this.selectedElement, bodyColor, fontFamily, currentContent, normalBgColor, normalFgColor, normalTextDecor, hoverBgColor, hoverFgColor, hoverTextDecor);
+    focusBgColor = document.getElementById("focusBgColorInput").value;
+    focusFgColor = document.getElementById("focusFgColorInput").value;
+    focusTextDecor = document.getElementById("focusTextDecorSelect").value;
+
+    makeChanges(this.selectedElement, bodyColor, fontFamily, currentContent, normalBgColor, normalFgColor, normalTextDecor, hoverBgColor, hoverFgColor, hoverTextDecor, focusBgColor, focusFgColor, focusTextDecor);
 }
 
-function makeChanges(element, bodyColor, fontFamily, currentContent, normalBgColor, normalFgColor, normalTextDecor, hoverBgColor, hoverFgColor, hoverTextDecor) {
+function makeChanges(element, bodyColor, fontFamily, currentContent, normalBgColor, normalFgColor, normalTextDecor, hoverBgColor, hoverFgColor, hoverTextDecor, focusBgColor, focusFgColor, focusTextDecor) {
     outputBody = document.getElementsByClassName("div-main__div-output")[0];
     outputBody.style.backgroundColor = bodyColor;
 
@@ -91,21 +112,31 @@ function makeChanges(element, bodyColor, fontFamily, currentContent, normalBgCol
         }
     }
 
-    if (element.tagName == "BUTTON" || element.tagName == "A") {
-        element.addEventListener("mouseover", function() {
-            if (document.activeElement !== element) {
-                element.style.backgroundColor = hoverBgColor;
-                element.style.color = hoverFgColor;
-                element.style.textDecoration = hoverTextDecor;
-            }
+    if (element.tagName == "BUTTON" || element.tagName == "A" || element.tagName == "INPUT") {
+        if (element.tagName != "INPUT") {
+            element.addEventListener("mouseover", function() {
+                if (document.activeElement !== element) {
+                    element.style.backgroundColor = hoverBgColor;
+                    element.style.color = hoverFgColor;
+                    element.style.textDecoration = hoverTextDecor;
+                }
+            });
+
+            element.addEventListener("mouseout", function() {
+                if (document.activeElement !== element) {
+                    element.style.backgroundColor = normalBgColor;
+                    element.style.color = normalFgColor;
+                    element.style.textDecoration = normalTextDecor;
+                }
+            });
+        }
+
+        element.addEventListener("focus", function() {
+            element.style.backgroundColor = focusBgColor;
+            element.style.color = focusFgColor;
+            element.style.textDecoration = focusTextDecor;
         });
-        element.addEventListener("mouseout", function() {
-            if (document.activeElement !== element) {
-                element.style.backgroundColor = normalBgColor;
-                element.style.color = normalFgColor;
-                element.style.textDecoration = normalTextDecor;
-            }
-        });
+
         element.addEventListener("blur", function() {
             element.style.backgroundColor = normalBgColor;
             element.style.color = normalFgColor;
