@@ -18,20 +18,26 @@ function getEventTarget(e) {
         document.getElementById("currentlySelectedP").innerHTML = '<span class = "div-main__div-input__p__span">Currently Selected:</span> "' + selectedElement.tagName + '"';
     }
 
-    alterParametersDisplayed(selectedElement.tagName);
+    alterParametersDisplayed(selectedElement);
 }
 
 function alterParametersDisplayed(currentElementTag) {
     document.getElementById("mainBgColorDiv").style.display = "block";
+    document.getElementById("currentContentDiv").style.display = "block";
     document.getElementById("fontFamilyDiv").style.display = "block";
     document.getElementById("normalBgColorDiv").style.display = "block";
     document.getElementById("normalFgColorDiv").style.display = "block";
     document.getElementById("normalTextDecorDiv").style.display = "block";
 
-    if (currentElementTag == "UL") {
+    if (currentElementTag.tagName == "UL") {
         document.getElementById("fontFamilyDiv").style.display = "none";
+        document.getElementById("currentContentDiv").style.display = "none";
         document.getElementById("normalFgColorDiv").style.display = "none";
         document.getElementById("normalTextDecorDiv").style.display = "none";
+    } else if (currentElementTag.tagName == "INPUT") {
+        document.getElementById("currentContentDiv").style.display = "none";
+    } else {
+        document.getElementById("contentTextarea").value = currentElementTag.innerHTML;
     }
 }
 
@@ -41,22 +47,31 @@ function matchColorToTextInput(inputChanged, inputToBeChanged) {
 
 function applyChanges() {
     bodyColor = document.getElementById("bodyBgColorInput").value;
+    fontFamily = document.getElementById("fontFamilySelect").value;
+    currentContent = document.getElementById("contentTextarea").value;
 
     normalBgColor = document.getElementById("normalBgColorInput").value;
     normalFgColor = document.getElementById("normalFgColorInput").value;
     normalTextDecor = document.getElementById("normalTextDecorSelect").value;
 
-    makeChanges(this.selectedElement, bodyColor, normalBgColor, normalFgColor, normalTextDecor);
+    makeChanges(this.selectedElement, bodyColor, fontFamily, currentContent, normalBgColor, normalFgColor, normalTextDecor);
 }
 
-function makeChanges(element, bodyColor, normalBgColor, normalFgColor, normalTextDecor) {
+function makeChanges(element, bodyColor, fontFamily, currentContent, normalBgColor, normalFgColor, normalTextDecor) {
     outputBody = document.getElementsByClassName("div-main__div-output")[0];
     outputBody.style.backgroundColor = bodyColor;
 
     element.style.backgroundColor = normalBgColor;
 
     if (element.tagName != "UL") {
+        element.style.fontFamily = fontFamily;
         element.style.color = normalFgColor;
         element.style.textDecoration = normalTextDecor;
+    }
+
+    if (element.tagName != "INPUT" && element.tagName != "UL") {
+        if (currentContent.trim().length > 0) {
+            element.innerHTML = currentContent;
+        }
     }
 }

@@ -47,14 +47,34 @@
                             <input class = "div-main__div-input__div-section__input--text" id = "bodyBgColorTextInput" type = "text"  value = "#ffffff" oninput = "matchColorToTextInput(this, document.getElementById('bodyBgColorInput'))">
                     </div>
 
-                    
+                    <div id = "currentContentDiv" class = "div-main__div-input__div-section">
+                        <label class = "div-main__div-input__div-section__label">Content:</label>
+                        <textarea type="text" class = "div-main__div-input__div-section__input--content" id = "contentTextarea">Company Name</textarea>
+                    </div>
+
                     <div id = "fontFamilyDiv" class = "div-main__div-input__div-section">
                         <label class = "div-main__div-input__div-section__label">Font-Family:</label>
                         <select class = "div-main__div-input__div-section__select" id = "fontFamilySelect">
-                            <option value = "none">None</option>
-                            <option value = "underline">Underline</option>
-                            <option vaue = "line-through">Line-Through</option>
-                            <option value = "overline">Overline</option>
+                            <optgroup label = "Sans Serif">
+                                <option style = "font-family: Arial;" value = "Arial">Arial</option>
+                                <option style = "font-family: Arial Black;" value = "Arial Black">Arial Black</option>
+                                <option style = "font-family: Arial Narrow;" value = "Arial Narrow">Arial Narrow</option>
+                                <option style = "font-family: Calibri;" value = "Calibri">Calibri</option>
+                                <option style = "font-family: Helvetica;" value = "Helvetica">Helvetica</option>
+                                <option style = "font-family: Impact;" value = "Impact">Impact</option>
+                                <option style = "font-family: Tahoma;" value = "Tahoma">Tahoma</option>
+                                <option style = "font-family: Trebuchet MS;" value = "Trebuchet MS">Trebuchet MS</option>
+                                <option style = "font-family: Verdana;" value = "Verdana">Verdana</option>
+                            </optgroup>
+                            <optgroup label = "Serif">
+                                <option style = "font-family: Cambria;" value = "Cambria">Cambria</option>
+                                <option style = "font-family: Georgia;" value = "Georgia">Georgia</option>
+                                <option style = "font-family: Lucida;" value = "Lucida Sans">Lucida</option>
+                                <option style = "font-family: Times New Roman;" value = "Times New Roman">Times New Roman</option>
+                            </optgroup>
+                            <optgroup label = "Monospaced">
+                                <option style = "font-family: Courier New;" value = "Courier New">Courier New</option>
+                            </optgroup>
                         </select>
                     </div>
 
@@ -75,6 +95,30 @@
                     <div id = "normalTextDecorDiv" class = "div-main__div-input__div-section">
                         <label class = "div-main__div-input__div-section__label">Element Text Decoration:</label>
                         <select class = "div-main__div-input__div-section__select" id = "normalTextDecorSelect">
+                            <option value = "none">None</option>
+                            <option value = "underline">Underline</option>
+                            <option vaue = "line-through">Line-Through</option>
+                            <option value = "overline">Overline</option>
+                        </select>
+                    </div>
+
+                    <h2 class = "div-main__div-input__h2">Hover Appearance:</h2>
+
+                    <div id = "hoverBgColorDiv" class = "div-main__div-input__div-section">
+                        <label class = "div-main__div-input__div-section__label">Hover Background Color:</label>
+                        <input class = "div-main__div-input__div-section__input--color" id = "hoverBgColorInput" type = "color" value = "#ffffff" onchange = "matchColorToTextInput(this, document.getElementById('hoverBgColorTextInput'))">
+                        <input class = "div-main__div-input__div-section__input--text" id = "hoverBgColorTextInput" type = "text"  value = "#ffffff" oninput = "matchColorToTextInput(this, document.getElementById('hoverBgColorInput'))">
+                    </div>
+
+                    <div id = "hoverFgColorDiv" class = "div-main__div-input__div-section">
+                        <label class = "div-main__div-input__div-section__label">Hover Foreground Color:</label>
+                        <input class = "div-main__div-input__div-section__input--color" id = "hoverFgColorInput" type = "color" value = "#000000" onchange = "matchColorToTextInput(this, document.getElementById('hoverFgColorTextInput'))">
+                        <input class = "div-main__div-input__div-section__input--text" id = "hoverFgColorTextInput" type = "text"  value = "#000000" oninput = "matchColorToTextInput(this, document.getElementById('hoverFgColorInput'))">
+                    </div>
+
+                    <div id = "hoverTextDecorDiv" class = "div-main__div-input__div-section">
+                        <label class = "div-main__div-input__div-section__label">Hover Text Decoration:</label>
+                        <select class = "div-main__div-input__div-section__select" id = "hoverTextDecorSelect">
                             <option value = "none">None</option>
                             <option value = "underline">Underline</option>
                             <option vaue = "line-through">Line-Through</option>
