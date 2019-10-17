@@ -23,11 +23,13 @@ function getEventTarget(e) {
 
 function alterParametersDisplayed(currentElementTag) {
     document.getElementById("mainBgColorDiv").style.display = "block";
+    document.getElementById("fontFamilyDiv").style.display = "block";
     document.getElementById("normalBgColorDiv").style.display = "block";
     document.getElementById("normalFgColorDiv").style.display = "block";
     document.getElementById("normalTextDecorDiv").style.display = "block";
 
     if (currentElementTag == "UL") {
+        document.getElementById("fontFamilyDiv").style.display = "none";
         document.getElementById("normalFgColorDiv").style.display = "none";
         document.getElementById("normalTextDecorDiv").style.display = "none";
     }
