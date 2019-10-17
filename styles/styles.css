@@ -125,7 +125,8 @@ table {
     text-decoration: none;
 
     font-family: "Arial";
-    font-weight: bold
+    font-weight: bold;
+    outline: none;
 }
 
 .div-main__div-output__header__menu__li__a--company:hover {
@@ -259,7 +260,8 @@ table {
     border-left: solid 0.25rem #1f1f1f;
     width: 50%;
 
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
 
     height: 100%;
 
@@ -425,6 +427,49 @@ table {
 
 .div-main__div-input__div-section__select:focus {
     box-shadow: 0 0 0.125rem 0.25rem #98C1D9;
+}
+
+.div-main__div-input__div-section__input--range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 7.5rem;
+    height: 0.5rem;
+    background-color: #bfbfbf;
+    border-radius: 0.25rem;
+    outline: none;
+    vertical-align: middle;
+}
+  
+.div-main__div-input__div-section__input--range:hover {
+    background-color: #F9C22E;
+}
+
+.div-main__div-input__div-section__input--range:focus {
+    background-color: #F9C22E;
+}
+  
+.div-main__div-input__div-section__input--range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    background-color: #1f1f1f;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.div-main__div-input__div-section__input--range:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0.125rem 0.25rem #98C1D9;
+}
+
+.div-main__div-input__div-section__input--range__span {
+    display: inline-block;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+
+    color: #1f1f1f;
+    font-family: "Roboto", Arial, Helvetica, sans-serif
 }
 
 .div-main__div-input__button {

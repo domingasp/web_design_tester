@@ -92,6 +92,9 @@ function alterParametersDisplayed(currentElement) {
     document.getElementById("focusBgColorDiv").style.display = "none";
     document.getElementById("focusFgColorDiv").style.display = "none";
     document.getElementById("focusTextDecorDiv").style.display = "none";
+    document.getElementById("outlineColorDiv").style.display = "none";
+    document.getElementById("outlineWidthDiv").style.display = "none";
+    document.getElementById("outlineBlurDiv").style.display = "none";
 
     if (currentElement.tagName == "UL") {
         document.getElementById("fontFamilyDiv").style.display = "none";
@@ -105,6 +108,10 @@ function alterParametersDisplayed(currentElement) {
         document.getElementById("focusBgColorDiv").style.display = "block";
         document.getElementById("focusFgColorDiv").style.display = "block";
         document.getElementById("focusTextDecorDiv").style.display = "block";
+
+        document.getElementById("outlineColorDiv").style.display = "block";
+        document.getElementById("outlineWidthDiv").style.display = "block";
+        document.getElementById("outlineBlurDiv").style.display = "block";
     } else {
         document.getElementById("contentTextarea").value = currentElement.innerHTML;
 
@@ -118,12 +125,20 @@ function alterParametersDisplayed(currentElement) {
             document.getElementById("focusBgColorDiv").style.display = "block";
             document.getElementById("focusFgColorDiv").style.display = "block";
             document.getElementById("focusTextDecorDiv").style.display = "block";
+
+            document.getElementById("outlineColorDiv").style.display = "block";
+            document.getElementById("outlineWidthDiv").style.display = "block";
+            document.getElementById("outlineBlurDiv").style.display = "block";
         }
     }
 }
 
 function matchColorToTextInput(inputChanged, inputToBeChanged) {
     inputToBeChanged.value = inputChanged.value;
+}
+
+function updatePixelLabel(inputChanged, labelToBeUpdated) {
+    labelToBeUpdated.innerHTML = inputChanged.value + "px";
 }
 
 function applyChanges() {
@@ -143,10 +158,14 @@ function applyChanges() {
     focusFgColor = document.getElementById("focusFgColorInput").value;
     focusTextDecor = document.getElementById("focusTextDecorSelect").value;
 
-    makeChanges(this.selectedElement, bodyColor, fontFamily, currentContent, normalBgColor, normalFgColor, normalTextDecor, hoverBgColor, hoverFgColor, hoverTextDecor, focusBgColor, focusFgColor, focusTextDecor);
+    outlineColor = document.getElementById("outlineColorInput").value;
+    outlineWidth = document.getElementById("outlineWidthInput").value;
+    outlineBlur = document.getElementById("outlineBlurInput").value;
+
+    makeChanges(this.selectedElement, bodyColor, fontFamily, currentContent, normalBgColor, normalFgColor, normalTextDecor, hoverBgColor, hoverFgColor, hoverTextDecor, focusBgColor, focusFgColor, focusTextDecor, outlineColor, outlineWidth, outlineBlur);
 }
 
-function makeChanges(element, bodyColor, fontFamily, currentContent, normalBgColor, normalFgColor, normalTextDecor, hoverBgColor, hoverFgColor, hoverTextDecor, focusBgColor, focusFgColor, focusTextDecor) {
+function makeChanges(element, bodyColor, fontFamily, currentContent, normalBgColor, normalFgColor, normalTextDecor, hoverBgColor, hoverFgColor, hoverTextDecor, focusBgColor, focusFgColor, focusTextDecor, outlineColor, outlineWidth, outlineBlur) {
     outputBody = document.getElementsByClassName("div-main__div-output")[0];
     outputBody.style.backgroundColor = bodyColor;
 
@@ -187,12 +206,16 @@ function makeChanges(element, bodyColor, fontFamily, currentContent, normalBgCol
             element.style.backgroundColor = focusBgColor;
             element.style.color = focusFgColor;
             element.style.textDecoration = focusTextDecor;
+
+            element.style.boxShadow = "0 0 " + outlineBlur/16.0 + "rem " + outlineWidth /16.0 + "rem " + outlineColor;
         });
 
         element.addEventListener("blur", function() {
             element.style.backgroundColor = normalBgColor;
             element.style.color = normalFgColor;
             element.style.textDecoration = normalTextDecor;
+
+            element.style.boxShadow = "none";
         });
     }
 }
