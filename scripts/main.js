@@ -21,7 +21,7 @@ function getEventTarget(e) {
     alterParametersDisplayed(selectedElement);
 }
 
-function alterParametersDisplayed(currentElementTag) {
+function alterParametersDisplayed(currentElement) {
     document.getElementById("mainBgColorDiv").style.display = "block";
     document.getElementById("currentContentDiv").style.display = "block";
     document.getElementById("fontFamilyDiv").style.display = "block";
@@ -29,15 +29,27 @@ function alterParametersDisplayed(currentElementTag) {
     document.getElementById("normalFgColorDiv").style.display = "block";
     document.getElementById("normalTextDecorDiv").style.display = "block";
 
-    if (currentElementTag.tagName == "UL") {
+    document.getElementById("hoverH2").style.display = "none";
+    document.getElementById("hoverBgColorDiv").style.display = "none";
+    document.getElementById("hoverFgColorDiv").style.display = "none";
+    document.getElementById("hoverTextDecorDiv").style.display = "none";
+
+    if (currentElement.tagName == "UL") {
         document.getElementById("fontFamilyDiv").style.display = "none";
         document.getElementById("currentContentDiv").style.display = "none";
         document.getElementById("normalFgColorDiv").style.display = "none";
         document.getElementById("normalTextDecorDiv").style.display = "none";
-    } else if (currentElementTag.tagName == "INPUT") {
+    } else if (currentElement.tagName == "INPUT") {
         document.getElementById("currentContentDiv").style.display = "none";
     } else {
-        document.getElementById("contentTextarea").value = currentElementTag.innerHTML;
+        document.getElementById("contentTextarea").value = currentElement.innerHTML;
+
+        if (currentElement.tagName == "BUTTON" || currentElement.tagName == "A") {
+            document.getElementById("hoverH2").style.display = "block";
+            document.getElementById("hoverBgColorDiv").style.display = "block";
+            document.getElementById("hoverFgColorDiv").style.display = "block";
+            document.getElementById("hoverTextDecorDiv").style.display = "block";
+        }
     }
 }
 
@@ -54,10 +66,14 @@ function applyChanges() {
     normalFgColor = document.getElementById("normalFgColorInput").value;
     normalTextDecor = document.getElementById("normalTextDecorSelect").value;
 
-    makeChanges(this.selectedElement, bodyColor, fontFamily, currentContent, normalBgColor, normalFgColor, normalTextDecor);
+    hoverBgColor = document.getElementById("hoverBgColorInput").value;
+    hoverFgColor = document.getElementById("hoverFgColorInput").value;
+    hoverTextDecor = document.getElementById("hoverTextDecorSelect").value;
+
+    makeChanges(this.selectedElement, bodyColor, fontFamily, currentContent, normalBgColor, normalFgColor, normalTextDecor, hoverBgColor, hoverFgColor, hoverTextDecor);
 }
 
-function makeChanges(element, bodyColor, fontFamily, currentContent, normalBgColor, normalFgColor, normalTextDecor) {
+function makeChanges(element, bodyColor, fontFamily, currentContent, normalBgColor, normalFgColor, normalTextDecor, hoverBgColor, hoverFgColor, hoverTextDecor) {
     outputBody = document.getElementsByClassName("div-main__div-output")[0];
     outputBody.style.backgroundColor = bodyColor;
 
@@ -73,5 +89,27 @@ function makeChanges(element, bodyColor, fontFamily, currentContent, normalBgCol
         if (currentContent.trim().length > 0) {
             element.innerHTML = currentContent;
         }
+    }
+
+    if (element.tagName == "BUTTON" || element.tagName == "A") {
+        element.addEventListener("mouseover", function() {
+            if (document.activeElement !== element) {
+                element.style.backgroundColor = hoverBgColor;
+                element.style.color = hoverFgColor;
+                element.style.textDecoration = hoverTextDecor;
+            }
+        });
+        element.addEventListener("mouseout", function() {
+            if (document.activeElement !== element) {
+                element.style.backgroundColor = normalBgColor;
+                element.style.color = normalFgColor;
+                element.style.textDecoration = normalTextDecor;
+            }
+        });
+        element.addEventListener("blur", function() {
+            element.style.backgroundColor = normalBgColor;
+            element.style.color = normalFgColor;
+            element.style.textDecoration = normalTextDecor;
+        });
     }
 }
