@@ -78,7 +78,7 @@ table {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #3D5A80;
+    background-color: #49A078;
 
     outline: none;
     height: 100%;
@@ -109,12 +109,12 @@ table {
 }
 
 .div-main__div-output__header__menu__li__a:hover {
-    background-color: #293241;
+    background-color: #216869;
 }
 
 .div-main__div-output__header__menu__li__a:focus {
-    box-shadow: 0 0 0 0.125rem #E0FBFC;
-    background-color: #293241;
+    box-shadow: 0 0 0.3125rem 0.1875rem #ECFFB0;
+    background-color: #216869;
 }
 
 .div-main__div-output__header__menu__li__a--company {
@@ -130,16 +130,14 @@ table {
 }
 
 .div-main__div-output__header__menu__li__a--company:hover {
-    color: #EE6C4D;
-    background-color: #293241;
+    background-color: #216869;
     text-decoration: underline;
 }
 
 .div-main__div-output__header__menu__li__a--company:focus {
-    color: #EE6C4D;
-    background-color: #293241;
+    background-color: #216869;
     text-decoration: underline;
-    box-shadow: 0 0 0 0.125rem #E0FBFC;
+    box-shadow: 0 0 0.3125rem 0.1875rem #ECFFB0;
 }
 
 .div-main__div-output__header__menu__inner-div {
@@ -212,14 +210,14 @@ table {
     outline: none;
     border: none;
 
-    border: solid 0.0625rem #293241;
+    border: solid 0.0625rem #1f1f1f;
     border-radius: 0.0625rem;
 
     padding: 0.25rem 0.25rem;
 }
 
 .div-main__div-output__main__input:focus {
-    box-shadow: 0 0 0 0.125rem #293241;
+    box-shadow: 0 0 0.3125rem 0.1875rem #49A078;
 }
 
 .div-main__div-output__main__button {
@@ -234,7 +232,7 @@ table {
 
     font-family: "Arial";
     font-size: 1.5rem;
-    background-color: #3D5A80;
+    background-color: #49A078;
     color: white;
     padding: 0.5rem 2rem;
     border-radius: 2rem;
@@ -242,12 +240,12 @@ table {
 }
 
 .div-main__div-output__main__button:hover {
-    background-color: #EE6C4D;
+    background-color: #216869;
 }
 
 .div-main__div-output__main__button:focus {
-    background-color: #EE6C4D;
-    box-shadow: 0 0 0 0.125rem #293241;
+    background-color: #216869;
+    box-shadow: 0 0 0.3125rem 0.1875rem #49A078;
 }
 
 /* ################## INPUT STYLING ################## */

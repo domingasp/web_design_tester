@@ -158,19 +158,18 @@
 
                     <div id = "outlineWidthDiv" class = "div-main__div-input__div-section">
                         <label class = "div-main__div-input__div-section__label">Focus Indicator Width:</label>
-                        <input class = "div-main__div-input__div-section__input--range" id = "outlineWidthInput" type = "range" min = "0" max = "5" step = "1" value = "1" oninput = "updatePixelLabel(this, document.getElementById('outlineWidthSpan'))">
+                        <input class = "div-main__div-input__div-section__input--range" id = "outlineWidthInput" type = "range" min = "0" max = "10" step = "1" value = "1" oninput = "updatePixelLabel(this, document.getElementById('outlineWidthSpan'))">
                         <span class = "div-main__div-input__div-section__input--range__span" id = "outlineWidthSpan">1px</span>
                     </div>
 
                     <div id = "outlineBlurDiv" class = "div-main__div-input__div-section">
                         <label class = "div-main__div-input__div-section__label">Focus Indicator Blur:</label>
-                        <input class = "div-main__div-input__div-section__input--range" id = "outlineBlurInput" type = "range" min = "0" max = "5" step = "1" value = "1" oninput = "updatePixelLabel(this, document.getElementById('outlineBlurSpan'))">
+                        <input class = "div-main__div-input__div-section__input--range" id = "outlineBlurInput" type = "range" min = "0" max = "10" step = "1" value = "1" oninput = "updatePixelLabel(this, document.getElementById('outlineBlurSpan'))">
                         <span class = "div-main__div-input__div-section__input--range__span" id = "outlineBlurSpan">1px</span>
                     </div>
                 </div>
-
+                
                 <button type = "button" onclick = "applyChanges()" class = "div-main__div-input__button">Apply Changes</button>
-
             </div>
         </div>
 

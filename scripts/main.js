@@ -1,5 +1,11 @@
 var selectedElement = document.getElementsByClassName("div-main__div-output__header__menu__li__a--company")[0];
 
+document.addEventListener("keyup", function(event) {
+    if (event.keyCode == 65 && document.activeElement.tagName != "INPUT") {
+        applyChanges();
+    }
+});
+
 document.getElementById("ulID").addEventListener("keyup", function(event) {
     if (event.keyCode == 13 || event.keyCode == 32) {
         getEventTarget();
