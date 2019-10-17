@@ -1,6 +1,58 @@
 var selectedElement = document.getElementsByClassName("div-main__div-output__header__menu__li__a--company")[0];
 
+document.getElementById("ulID").addEventListener("keyup", function(event) {
+    if (event.keyCode == 13 || event.keyCode == 32) {
+        getEventTarget();
+    }
+});
 
+document.getElementById("companyAID").addEventListener("keyup", function(event) {
+    if (event.keyCode == 13 || event.keyCode == 32) {
+        getEventTarget();
+    }
+});
+
+document.getElementById("item1AID").addEventListener("keyup", function(event) {
+    if (event.keyCode == 13 || event.keyCode == 32) {
+        getEventTarget();
+    }
+});
+
+document.getElementById("item2AID").addEventListener("keyup", function(event) {
+    if (event.keyCode == 13 || event.keyCode == 32) {
+        getEventTarget();
+    }
+});
+
+document.getElementById("headerH1ID").addEventListener("keyup", function(event) {
+    if (event.keyCode == 13 || event.keyCode == 32) {
+        getEventTarget();
+    }
+});
+
+document.getElementById("textPID").addEventListener("keyup", function(event) {
+    if (event.keyCode == 13 || event.keyCode == 32) {
+        getEventTarget();
+    }
+});
+
+document.getElementById("labelID").addEventListener("keyup", function(event) {
+    if (event.keyCode == 13 || event.keyCode == 32) {
+        getEventTarget();
+    }
+});
+
+document.getElementById("inputID").addEventListener("keyup", function(event) {
+    if (event.keyCode == 13 || event.keyCode == 32) {
+        getEventTarget();
+    }
+});
+
+document.getElementById("buttonID").addEventListener("keyup", function(event) {
+    if (event.keyCode == 13 || event.keyCode == 32) {
+        getEventTarget();
+    }
+});
 
 function getEventTarget(e) {
     e = e || window.event;
